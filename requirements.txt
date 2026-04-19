@@ -1,6 +1,7 @@
 streamlit
 chromadb
 sentence-transformers
+torch
 langchain-groq
 langgraph
 langchain-core
