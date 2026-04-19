@@ -4,7 +4,6 @@ import uuid
 from typing import Annotated, TypedDict
 
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
-os.environ["GROQ_API_KEY"] = "YOUR_API_KEY_HERE"
 
 import chromadb
 import streamlit as st
@@ -19,7 +18,7 @@ from sentence_transformers import SentenceTransformer
 st.set_page_config(page_title="E-Commerce FAQ Bot", page_icon="🛒", layout="wide")
 
 groq_api_key = os.getenv("GROQ_API_KEY", "")
-if not groq_api_key:
+if not groq_api_key or groq_api_key == "YOUR_API_KEY_HERE":
     try:
         groq_api_key = st.secrets.get("GROQ_API_KEY", "")
     except Exception:
