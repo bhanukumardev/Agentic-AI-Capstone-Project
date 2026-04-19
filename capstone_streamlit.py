@@ -3,6 +3,9 @@ import re
 import uuid
 from typing import Annotated, TypedDict
 
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+os.environ["GROQ_API_KEY"] = "YOUR_API_KEY_HERE"
+
 import chromadb
 import streamlit as st
 from langchain_core.messages import AIMessage, AnyMessage, HumanMessage, SystemMessage
@@ -12,8 +15,6 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
 from sentence_transformers import SentenceTransformer
-
-os.environ["GROQ_API_KEY"] = "YOUR_API_KEY_HERE"
 
 st.set_page_config(page_title="E-Commerce FAQ Bot", page_icon="🛒", layout="wide")
 

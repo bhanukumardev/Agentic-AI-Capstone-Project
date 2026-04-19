@@ -4,3 +4,4 @@ sentence-transformers
 langchain-groq
 langgraph
 langchain-core
+protobuf<6
