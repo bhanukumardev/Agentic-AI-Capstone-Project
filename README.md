@@ -18,7 +18,7 @@ The bot can answer common customer queries about products, orders, shipping, ret
 
 You can access the deployed app here:
 
-🔗 **Deployment link:** https://agentic-ai-capstone-project.streamlit.app/
+🔗 **Deployment link:** https://e-commerce-faq-bot.streamlit.app/
 
 ---
 
