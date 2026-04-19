@@ -18,6 +18,19 @@ from sentence_transformers import SentenceTransformer
 
 st.set_page_config(page_title="E-Commerce FAQ Bot", page_icon="🛒", layout="wide")
 
+groq_api_key = os.getenv("GROQ_API_KEY", "")
+if not groq_api_key:
+    try:
+        groq_api_key = st.secrets.get("GROQ_API_KEY", "")
+    except Exception:
+        groq_api_key = ""
+
+if not groq_api_key or groq_api_key == "YOUR_API_KEY_HERE":
+    st.error("GROQ_API_KEY is not configured. Add it as a Streamlit secret or environment variable.")
+    st.stop()
+
+os.environ["GROQ_API_KEY"] = groq_api_key
+
 
 @st.cache_resource(show_spinner=False)
 def init_graph():

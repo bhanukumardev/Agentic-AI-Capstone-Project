@@ -83,6 +83,10 @@ streamlit run capstone_streamlit.py
 
 Open the URL shown in the terminal (usually http://localhost:8501) to interact with the FAQ bot locally.
 
+### 5. Configure Streamlit Cloud secrets
+
+For deployment, add your Groq API key as a Streamlit secret named `GROQ_API_KEY`. The app reads this automatically from Streamlit Cloud or from your local environment.
+
 ---
 
 ## Project Files
